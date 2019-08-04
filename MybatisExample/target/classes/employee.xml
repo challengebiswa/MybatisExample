@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace = "com.mybatis.pojo.Employee">
+<select id = "getAll" resultMap = "employeeMap">
+   select * from employee; 
+</select>
+
+<resultMap id = "employeeMap" type = "com.mybatis.pojo.Employee">
+   <result property = "id" column = "ID"/>
+   <result property = "name" column = "NAME"/>
+   <result property = "dept" column = "DEPT"/>
+   <result property = "sal" column = "SAL"/>
+   <result property = "phone" column = "PHONE"/>
+   <result property = "email" column = "EMAIL"/>
+</resultMap>
+
+<insert id = "insert" parameterType = "com.mybatis.pojo.Employee">
+      insert into employee (NAME, DEPT, SAL, PHONE, EMAIL ) VALUES (#{name}, #{dept}, #{sal}, #{phone}, #{email});
+	 <selectKey keyProperty = "id" resultType = "int" order = "AFTER">
+         select last_insert_id() as id
+      </selectKey>   
+			
+   </insert>
+   	
+</mapper>
