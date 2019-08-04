@@ -16,11 +16,8 @@
 </resultMap>
 
 <insert id = "insert" parameterType = "com.mybatis.pojo.Employee">
-      insert into employee (NAME, DEPT, SAL, PHONE, EMAIL ) VALUES (#{name}, #{dept}, #{sal}, #{phone}, #{email});
-	 <selectKey keyProperty = "id" resultType = "int" order = "AFTER">
-         select last_insert_id() as id
-      </selectKey>   
-			
+      insert into employee (ID,NAME, DEPT, SAL, PHONE, EMAIL ) VALUES (#{id},#{name}, #{dept}, #{sal}, #{phone}, #{email});
+		
    </insert>
    	
 </mapper>

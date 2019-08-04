@@ -9,10 +9,13 @@ public class Employee {
 	private int phone;
 	private String email;
 	
-	
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
 
-	public Employee(String name, String dept, int sal, int phone, String email) {
+	public Employee(Integer id,String name, String dept, int sal, int phone, String email) {
 		super();
+		this.id=id;
 		this.name = name;
 		this.dept = dept;
 		this.sal = sal;

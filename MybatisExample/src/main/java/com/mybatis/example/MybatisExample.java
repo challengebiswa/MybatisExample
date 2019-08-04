@@ -22,7 +22,7 @@ public class MybatisExample {
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 		SqlSession session = sqlSessionFactory.openSession();
 		
-		Employee addEmp=new Employee("Test1", "dept1",10000, 9999, "s@ss.com");
+		Employee addEmp=new Employee(2,"Test1", "dept1",10000, 9999, "s@ss.com");
 		
 		session.insert("com.mybatis.pojo.Employee.insert", addEmp);
 
